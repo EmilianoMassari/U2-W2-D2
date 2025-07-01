@@ -585,7 +585,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="contactForm">
               <div class="mb-3">
                 <label for="contactEmail" class="form-label">Email</label>
                 <input
@@ -606,17 +606,19 @@
                   required
                 ></textarea>
               </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark"
+                  data-bs-dismiss="modal"
+                >
+                  Chiudi
+                </button>
+                <button type="submit" class="btn btn-outline-dark">
+                  Invia
+                </button>
+              </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-outline-dark"
-              data-bs-dismiss="modal"
-            >
-              Chiudi
-            </button>
-            <button type="button" class="btn btn-outline-dark">Invia</button>
           </div>
         </div>
       </div>
@@ -656,7 +658,7 @@
           card.classList.add("position-relative")
           card.appendChild(badge)
         })
-        // Bottone scroll top mobile
+        // Bottone scroll top
         const scrollTopBtn = document.getElementById("scrollTopBtn")
         window.addEventListener("scroll", function () {
           if (window.scrollY > 200) {
@@ -668,6 +670,20 @@
         scrollTopBtn.addEventListener("click", function () {
           window.scrollTo({ top: 0, behavior: "smooth" })
         })
+        // Invio form modale
+        const contactForm = document.getElementById("contactForm")
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault()
+            // Chiudi il modale
+            const modal = bootstrap.Modal.getOrCreateInstance(
+              document.getElementById("contactModal")
+            )
+            modal.hide()
+            // Reset del form
+            contactForm.reset()
+          })
+        }
       })
     </script>
     <!-- Fine Scripts -->

@@ -110,17 +110,21 @@
       <!-- Card -->
       <div class="container my-4" id="Saldi">
         <div class="row">
-          <div class="col-12 d-flex align-items-center justify-content-between">
-            <h2 class="text-left mt-4 mb-4">Saldi</h2>
+          <div
+            class="col-12 d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 gap-md-3"
+          >
+            <h2 class="text-left mt-4 mb-4 mb-md-0">Saldi</h2>
+            <div class="d-flex flex-column flex-sm-row gap-2">
+              <button
+                class="btn btn-outline-dark"
+                id="countHatsBtn"
+                type="button"
+              >
+                Conta cappelli
+              </button>
+            </div>
             <button
-              class="btn btn-outline-dark"
-              id="countHatsBtn"
-              type="button"
-            >
-              Conta cappelli
-            </button>
-            <button
-              class="btn btn-outline-secondary me-3"
+              class="btn btn-outline-secondary mt-2 mt-md-0"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseSaldi"
@@ -128,13 +132,6 @@
               aria-controls="collapseSaldi"
             >
               Mostra/Nascondi
-            </button>
-            <button
-              class="btn btn-danger ms-2"
-              id="removeAllCardsBtn"
-              type="button"
-            >
-              Rimuovi tutte le card
             </button>
           </div>
         </div>

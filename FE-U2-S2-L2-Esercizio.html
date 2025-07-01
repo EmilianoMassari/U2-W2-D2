@@ -666,5 +666,38 @@
       </svg>
     </button>
     <!-- Fine Bottone torna su -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Aggiungi la X per rimuovere la singola card
+        const saldiCards = document.querySelectorAll("#Saldi .card")
+        saldiCards.forEach(function (card) {
+          // Badge HOT
+          const badge = document.createElement("span")
+          badge.className = "badge bg-danger position-absolute top-0 end-0 m-2"
+          badge.textContent = "HOT"
+          card.classList.add("position-relative")
+          card.appendChild(badge)
+          // X per rimuovere la card
+          const closeBtn = document.createElement("button")
+          closeBtn.type = "button"
+          closeBtn.innerHTML = "&times;"
+          closeBtn.className =
+            "btn btn-sm position-absolute top-0 start-0 m-2 p-0 shadow d-flex align-items-center justify-content-center"
+          closeBtn.style.backgroundColor = "#dc3545"
+          closeBtn.style.color = "white"
+          closeBtn.style.borderRadius = "0"
+          closeBtn.style.width = "28px"
+          closeBtn.style.height = "28px"
+          closeBtn.style.fontSize = "1.3rem"
+          closeBtn.style.lineHeight = "1"
+          closeBtn.style.zIndex = 2
+          closeBtn.setAttribute("aria-label", "Rimuovi card")
+          closeBtn.addEventListener("click", function () {
+            card.remove()
+          })
+          card.appendChild(closeBtn)
+        })
+      })
+    </script>
   </body>
 </html>

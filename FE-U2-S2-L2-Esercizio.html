@@ -1,99 +1,704 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <!-- Abbiamo bisogno di un sito web per un'agenzia di viaggi!
-
-In questa pagina aggiungerai destinazioni di posti che sogni di visitare in futuro.
-
-Il progetto non richiede alcuna customizzazione di CSS, dovrai crearlo interamente usando le classi di bootstrap, sia per quello che riguarda il layout che lo stile.
-
-
-Testa frequentemente il tuo lavoro nelle 3 principali risoluzioni (mobile, tablet, desktop) usando i developer tools del browser nella sezione emulazione device, per una maggiore precisione.
-
-Inizia utilizzando i componenti esistenti di Bootstrap 5 per creare la tua pagina (modificali all'occorrenza utilizzando le utility classes di bootstrap: colori, spazi, margini, dimensioni etc...)
-Usa container > row > col-* in questo ordine per ottenere un layout responsive perfetto.
-
-Esercizi:
-
-1) Implementa una navbar con questi elementi di menu:
-Home
-Saldi
-Welcome Summer
-Last Minute
-Recensioni
-
-Collegherai ogni sezione della pagina agli elementi del menu corrispondenti. 
-
-2) Aggiungi un logo alla navbar, un qualsiasi logo di agenzia di viaggi, anche inventata.
-
-3) Aggiungi una sezione introduttiva con il nome, il payoff dell'agenzia, 
-una breve descrizione in corsivo e una call-to-action (bottone) "Prenota ora" di colore azzurro chiaro e testo bianco e grassetto
-
-Il background della sezione sarà grigio chiaro e con bordi arrotondati e del padding generoso all'interno
-
-4) Implementa la sezione "Saldi". Qui mostrerai 4 destinazioni.
-
-In questa sezione dovranno esserci:
-
-4 card per destinazioni per linea a schermo grande - desktop (quattro sulla stessa linea)
-3 card per destinazioni per linea a schermo medio  - tablet  (una dovrà scomparire)
-2 card per destinazioni per linea a schermo piccolo - mobile (due per linea)
-
-le card avranno un bordo di 2px azzurro chiaro, il bottone azzurro chiaro e testo default
-
-5) Implementa la sezione "Welcome Summer". Qui mostrerai 6 destinazioni al tuo utente. (nessun bordo, ma stesso stile dei bottoni precedenti)
-
-In questa sezione dovranno esserci:
-
-6 card per destinazioni per linea a schermo extra large
-3 card per destinazioni per linea a schermo grande (desktop)
-2 card per destinazioni per linea a schermo medio (tablet)
-2 card per destinazioni per linea a schermo piccolo (mobile)
-
-6) Implementa la sezione "Offerta del giorno". Qui avrai:
-
-66% dello spazio dedicato all'immagine del luogo di destinazione
-33% dedicato al nome, date, prezzo e un badge con "best offer" come testo
-
-l'immagine avrà i bordi arrotondati e un'ombra leggera
-per il contenuto: il nome dovrà essere più grande del resto,
-le date dovranno essere formattate con font "monospace",
-il prezzo dovrà essere definito come "lead"
-e il badge sarà scuro
-
-
-7) Rendi invisibile la sezione "Offerta del giorno" su schermi piccoli.
-
-8) Aggiungi nella sezione "Welcome Summer" un'ombra grande ad ogni card.
-
-9) Crea una sezione "Last Minute", in cui mostrerai 6 immagini delle destinazioni last minute come rettangoli ombreggiati dai bordi arrotondati, senza testo. Rendile responsive come preferisci!
-
-10) Crea una sezione "Recensioni", dove l'utente potrà trovare alcuni feedback da utenti fittizi. 
-Piccola immagine tonda a sinistra con bordo 2px azzurro, nome utente e recensione a destra
-
-11) Crea un footer con le informazioni dell'agenzia e un bottone "Contattaci".
-
-
-
-EXTRAS
-
-12) Crea un bottone vicino ad ogni sezione per collassarla e riaprirla se premuto.
-
-13) Crea la possibilità di contare il numero di "viaggi" presenti sulla pagina e visualizzare il risultato in un alert.
-
-14) Crea un modale con un campo email e un messaggio.
-
-15) Quando l'utente cliccherà su "Contattaci", il modale dovrà essere visualizzato.
-
-16) Crea una funzione che aggiunga un badge con la scritta "HOT" su ognuna delle offerte "Welcome Summer" posizionato in alto a destra.
-
-17) Crea una funzione che rimuova tutte le "card" dalla pagina
-
--->
-</head>
-
-<body></body>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New Era</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <!-- Link icona nella tab del browser -->
+    <link rel="icon" type="image/png" href="assets/NewEra.png" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 sticky-top">
+        <div class="container">
+          <a class="navbar-brand" href="#Home">
+            <img src="assets/NewEra.png" alt="logo" style="width: 100px" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#Home"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Saldi">Saldi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#BestOffer">Best Offer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#LastMinute">Last Minute</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Recensioni">Recensioni</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Abbigliamento
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Cappelli</a></li>
+                  <li><a class="dropdown-item" href="#">T-shirt</a></li>
+                  <li><a class="dropdown-item" href="#">Felpe</a></li>
+                  <li><a class="dropdown-item" href="#">Pantaloncini</a></li>
+                  <li><a class="dropdown-item" href="#">Pantaloni</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">New Era</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-dark" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Fine Navbar -->
+    <!-- Nuovi Arrivi -->
+    <main id="Home">
+      <div class="container-fluid bg-dark text-white p-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-8">
+              <h1 class="text-left border-bottom border-white pb-3">New Era</h1>
+              <p class="text-left">
+                New Era è un'azienda che produce cappelli e accessori per vari
+                sport.
+              </p>
+              <button type="button" class="btn btn-outline-light">
+                Nuovi arrivi
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fine Nuovi Arrivi -->
+      <!-- Card -->
+      <div class="container my-4" id="Saldi">
+        <div class="row">
+          <div class="col-12 d-flex align-items-center justify-content-between">
+            <h2 class="text-left mt-4 mb-4">Saldi</h2>
+            <button
+              class="btn btn-outline-dark"
+              id="countHatsBtn"
+              type="button"
+            >
+              Conta cappelli
+            </button>
+            <button
+              class="btn btn-outline-secondary me-3"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSaldi"
+              aria-expanded="true"
+              aria-controls="collapseSaldi"
+            >
+              Mostra/Nascondi
+            </button>
+            <button
+              class="btn btn-danger ms-2"
+              id="removeAllCardsBtn"
+              type="button"
+            >
+              Rimuovi tutte le card
+            </button>
+          </div>
+        </div>
+        <div class="collapse show" id="collapseSaldi">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+              <div class="card h-100">
+                <img
+                  src="https://www.neweracap.eu/cdn/shop/files/10000103_3QL.jpg?v=1746780599&width=1920"
+                  class="card-img-top"
+                  alt="Cappello New Era Nero"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    Cappelli New Era | Abbigliamento sportivo MLB, NFL e NBA |
+                    New Era Cap IT
+                  </h5>
+                  <p class="card-text">
+                    <span class="text-decoration-line-through me-2">45,00€</span
+                    >40,00€
+                  </p>
+                  <a
+                    href="https://www.neweracap.eu/it-it/products/59fifty-a-frame-new-york-yankees-70954640"
+                    class="btn btn-dark mt-auto"
+                    target="_blank"
+                    >Go to item</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+              <div class="card h-100">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4EDlsTo0Mdi1NOxb7CaxyHMPDtLadpq-_YA&s"
+                  class="card-img-top"
+                  alt="Cappello New Era Nero"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    Cappelli New Era | Abbigliamento sportivo MLB, NFL e NBA |
+                    New Era Cap IT
+                  </h5>
+                  <p class="card-text">
+                    <span class="text-decoration-line-through me-2">60,00€</span
+                    >55,00€
+                  </p>
+                  <a
+                    href="https://www.neweracap.eu/it-it/products/59fifty-a-frame-chicago-bulls-70954636"
+                    class="btn btn-dark mt-auto"
+                    target="_blank"
+                    >Go to item</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+              <div class="card h-100">
+                <img
+                  src="https://www.neweracap.eu/cdn/shop/files/60675518.jpg?v=1747785378&width=1920"
+                  class="card-img-top"
+                  alt="Cappello New Era Dorato"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    Cappelli New Era | Abbigliamento sportivo MLB, NFL e NBA |
+                    New Era Cap IT
+                  </h5>
+                  <p class="card-text">
+                    <span class="text-decoration-line-through me-2">45,00€</span
+                    >40,00€
+                  </p>
+                  <a
+                    href="https://www.neweracap.eu/it-it/products/9forty-a-frame-trucker-la-dodgers-mlb-cord-60691237"
+                    class="btn btn-dark mt-auto"
+                    target="_blank"
+                    >Go to item</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+              <div class="card h-100">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8jsITEgPGewLEgOke2YTGocZ6o2swGKiAyA&s"
+                  class="card-img-top"
+                  alt="Cappello New Era Celeste Limited"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    Cappelli New Era | Abbigliamento sportivo MLB, NFL e NBA |
+                    New Era Cap IT
+                  </h5>
+                  <p class="card-text">
+                    <span class="text-decoration-line-through me-2">60,00€</span
+                    >55,00€
+                  </p>
+                  <a
+                    href="https://www.neweracap.eu/it-it/products/59fifty-new-era-oversized-script-60578259?_pos=1&_sid=5d132697a&_ss=r"
+                    class="btn btn-dark mt-auto"
+                    target="_blank"
+                    >Go to item</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+              <div class="card h-100">
+                <img
+                  src="https://www.neweracap.eu/cdn/shop/files/60667622_aebb2eb2-cd21-4fd6-92f0-a1f90c1201dd.jpg?v=1747780135"
+                  class="card-img-top"
+                  alt="Cappello New Era Sportivo"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    Cappelli New Era | Abbigliamento sportivo MLB, NFL e NBA |
+                    New Era Cap IT
+                  </h5>
+                  <p class="card-text">
+                    <span class="text-decoration-line-through me-2">55,00€</span
+                    >52,00€
+                  </p>
+                  <a
+                    href="https://www.neweracap.eu/products/new-era-cream-pre-curved-golfer-adjustable-cap-60667622"
+                    class="btn btn-dark mt-auto"
+                    target="_blank"
+                    >Go to item</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+              <div class="card h-100">
+                <img
+                  src="https://www.neweracap.eu/cdn/shop/files/70651392_2_0551eb38-93cb-4116-9ac7-3fe04d3021f5.jpg?v=1750754653&width=1920"
+                  class="card-img-top"
+                  alt="Cappello New Era Celeste"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    Cappelli New Era | Abbigliamento sportivo MLB, NFL e NBA |
+                    New Era Cap IT
+                  </h5>
+                  <p class="card-text">
+                    <span class="text-decoration-line-through me-2">55,00€</span
+                    >49,00€
+                  </p>
+                  <a
+                    href="https://www.neweracap.eu/it-it/products/cappellino-59fifty-fitted-new-york-yankees-celeste-70651392?_pos=2&_sid=8f7a0d3a9&_ss=r"
+                    class="btn btn-dark mt-auto"
+                    target="_blank"
+                    >Go to item</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+              <div class="card h-100">
+                <img
+                  src="https://www.neweracap.eu/cdn/shop/files/12572843_m1_8c313111-9fe4-4ec8-8a8a-9072e5f55387.jpg?v=1743825263"
+                  class="card-img-top"
+                  alt="Cappello New Era Blu"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    Cappelli New Era | Abbigliamento sportivo MLB, NFL e NBA |
+                    New Era Cap IT
+                  </h5>
+                  <p class="card-text">
+                    <span class="text-decoration-line-through me-2">35,00€</span
+                    >30,00€
+                  </p>
+                  <a
+                    href="https://www.neweracap.eu/it-it/products/cappellino-59fifty-fitted-la-dodgers-ac-perf-game-blu-12572843"
+                    class="btn btn-dark mt-auto"
+                    target="_blank"
+                    >Go to item</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+              <div class="card h-100">
+                <img
+                  src="https://www.openlabshop.com/cdn/shop/files/WkPsQvOxjqpQtO7JImmagine_252018.jpg?v=1750789593"
+                  class="card-img-top"
+                  alt="Cappello New Era Rosso"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    Cappelli New Era | Abbigliamento sportivo MLB, NFL e NBA |
+                    New Era Cap IT
+                  </h5>
+                  <p class="card-text">
+                    <span class="text-decoration-line-through me-2">48,00€</span
+                    >43,00€
+                  </p>
+                  <a
+                    href="https://www.neweracap.eu/it-it/products/cappello-la-dodgers-rosso-59fifty-essential-10047498"
+                    class="btn btn-dark mt-auto"
+                    target="_blank"
+                    >Go to item</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fine Card -->
+      <!-- Offerta del giorno -->
+      <div class="container my-5 d-none d-md-block" id="BestOffer">
+        <div class="row align-items-center">
+          <div class="col-12 d-flex align-items-center justify-content-end">
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseBestOffer"
+              aria-expanded="true"
+              aria-controls="collapseBestOffer"
+            >
+              Mostra/Nascondi
+            </button>
+          </div>
+        </div>
+        <div class="collapse show" id="collapseBestOffer">
+          <div class="row align-items-center">
+            <div class="col-md-8 mb-3 mb-md-0">
+              <a
+                href="https://www.neweracap.eu/en-it/collections/netflix-merchandise"
+                target="_blank"
+              >
+                <img
+                  src="https://pbs.twimg.com/media/EmJ81ftXYAIv3pd.jpg"
+                  class="img-fluid rounded shadow"
+                  alt="Destinazione Offerta del Giorno"
+                />
+              </a>
+            </div>
+            <div class="col-md-4">
+              <span class="badge bg-dark mb-2">Best Offer</span>
+              <h2 class="fw-bold display-5">
+                New Era, Netlix, Stranger Things
+              </h2>
+              <div class="mb-2">
+                <span class="font-monospace">Dal 10/07/2024 al 17/07/2024</span>
+              </div>
+              <div class="lead mb-2">
+                <span class="text-decoration-line-through me-2">65,00€</span
+                >40,00€
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fine Offerta del giorno -->
+      <!-- Last Minute -->
+      <div class="container my-5" id="LastMinute">
+        <div class="row">
+          <div class="col-12 d-flex align-items-center justify-content-between">
+            <h2 class="mb-4 mb-0">Last Minute</h2>
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseLastMinute"
+              aria-expanded="true"
+              aria-controls="collapseLastMinute"
+            >
+              Mostra/Nascondi
+            </button>
+          </div>
+        </div>
+        <div class="collapse show" id="collapseLastMinute">
+          <div class="row g-3">
+            <div class="col-6 col-md-4 col-lg-2">
+              <img
+                src="https://www.neweracap.eu/cdn/shop/files/10000103_3QL.jpg?v=1746780599&width=600"
+                class="img-fluid rounded shadow"
+                alt="Last Minute 1"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <img
+                src="https://www.neweracap.eu/cdn/shop/files/12572843_m1_8c313111-9fe4-4ec8-8a8a-9072e5f55387.jpg?v=1743825263&width=600"
+                class="img-fluid rounded shadow"
+                alt="Last Minute 2"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <img
+                src="https://www.neweracap.eu/cdn/shop/files/60675518.jpg?v=1747785378&width=600"
+                class="img-fluid rounded shadow"
+                alt="Last Minute 3"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <img
+                src="https://www.neweracap.eu/cdn/shop/files/70651392_2_0551eb38-93cb-4116-9ac7-3fe04d3021f5.jpg?v=1750754653&width=600"
+                class="img-fluid rounded shadow"
+                alt="Last Minute 4"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <img
+                src="https://www.neweracap.eu/cdn/shop/files/60667622_aebb2eb2-cd21-4fd6-92f0-a1f90c1201dd.jpg?v=1747780135&width=600"
+                class="img-fluid rounded shadow"
+                alt="Last Minute 5"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <img
+                src="https://www.openlabshop.com/cdn/shop/files/WkPsQvOxjqpQtO7JImmagine_252018.jpg?v=1750789593&width=600"
+                class="img-fluid rounded shadow"
+                alt="Last Minute 6"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fine Last Minute -->
+      <!-- Recensioni -->
+      <div class="container my-5" id="Recensioni">
+        <div class="row">
+          <div class="col-12 d-flex align-items-center justify-content-between">
+            <h2 class="mb-4 mb-0">Recensioni</h2>
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseRecensioni"
+              aria-expanded="true"
+              aria-controls="collapseRecensioni"
+            >
+              Mostra/Nascondi
+            </button>
+          </div>
+        </div>
+        <div class="collapse show" id="collapseRecensioni">
+          <div class="row gy-4">
+            <div class="col-12 col-md-6">
+              <div class="d-flex align-items-start">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                  alt="Utente"
+                  class="rounded-circle me-3"
+                  style="
+                    width: 64px;
+                    height: 64px;
+                    border: 2px solid #0dcaf0;
+                    object-fit: cover;
+                  "
+                />
+                <div>
+                  <h5 class="mb-1">Luca Bianchi</h5>
+                  <p class="mb-0">
+                    Cappelli di qualità eccezionale! Spedizione rapidissima,
+                    consigliatissimo.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="d-flex align-items-start">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                  alt="Utente"
+                  class="rounded-circle me-3"
+                  style="
+                    width: 64px;
+                    height: 64px;
+                    border: 2px solid #0dcaf0;
+                    object-fit: cover;
+                  "
+                />
+                <div>
+                  <h5 class="mb-1">Giulia Verdi</h5>
+                  <p class="mb-0">
+                    Adoro i design New Era! Servizio clienti molto disponibile.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="d-flex align-items-start">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                  alt="Utente"
+                  class="rounded-circle me-3"
+                  style="
+                    width: 64px;
+                    height: 64px;
+                    border: 2px solid #0dcaf0;
+                    object-fit: cover;
+                  "
+                />
+                <div>
+                  <h5 class="mb-1">Marco Rossi</h5>
+                  <p class="mb-0">
+                    Ottimi prezzi e vasta scelta. Comprerò sicuramente di nuovo!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fine Recensioni -->
+    </main>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row align-items-center text-center text-md-start">
+          <div class="col-12 col-md-8 mb-3 mb-md-0">
+            <strong>New Era</strong><br />
+            Email: info@newera.it
+          </div>
+          <div class="col-12 col-md-4 text-center text-md-end">
+            <a
+              href="#"
+              class="btn btn-outline-light"
+              data-bs-toggle="modal"
+              data-bs-target="#contactModal"
+              >Contattaci</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Fine Footer -->
+    <!-- Modale Contatto -->
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      aria-labelledby="contactModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Contattaci</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="contactEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="contactEmail"
+                  placeholder="nome@email.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contactMessage" class="form-label">Messaggio</label>
+                <textarea
+                  class="form-control"
+                  id="contactMessage"
+                  rows="4"
+                  placeholder="Scrivi qui il tuo messaggio..."
+                  required
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              data-bs-dismiss="modal"
+            >
+              Chiudi
+            </button>
+            <button type="button" class="btn btn-outline-dark">Invia</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fine Modale Contatto -->
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Js per gli extra -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Bottone conta cappelli
+        const btn = document.getElementById("countHatsBtn")
+        if (btn) {
+          btn.addEventListener("click", function () {
+            const cards = document.querySelectorAll("#Saldi .card")
+            alert("Numero di cappelli presenti: " + cards.length)
+          })
+        }
+        // Bottone rimuovi tutte le card
+        const removeBtn = document.getElementById("removeAllCardsBtn")
+        if (removeBtn) {
+          removeBtn.addEventListener("click", function () {
+            const cards = document.querySelectorAll("#Saldi .card")
+            cards.forEach((card) => card.remove())
+          })
+        }
+        // Badge HOT sulle offerte Saldi
+        const saldiCards = document.querySelectorAll("#Saldi .card")
+        saldiCards.forEach(function (card) {
+          const badge = document.createElement("span")
+          badge.className = "badge bg-danger position-absolute top-0 end-0 m-2"
+          badge.textContent = "HOT"
+          card.classList.add("position-relative")
+          card.appendChild(badge)
+        })
+        // Bottone scroll top mobile
+        const scrollTopBtn = document.getElementById("scrollTopBtn")
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 200) {
+            scrollTopBtn.style.display = "block"
+          } else {
+            scrollTopBtn.style.display = "none"
+          }
+        })
+        scrollTopBtn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" })
+        })
+      })
+    </script>
+    <!-- Fine Scripts -->
+    <!-- Bottone torna su -->
+    <button
+      id="scrollTopBtn"
+      class="btn btn-dark position-fixed"
+      style="
+        bottom: 20px;
+        right: 20px;
+        z-index: 1050;
+        width: 48px;
+        height: 48px;
+        border-radius: 0;
+        display: none;
+      "
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="white"
+        class="bi bi-arrow-up"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M8 12a.5.5 0 0 0 .5-.5V4.707l3.147 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 4.707V11.5A.5.5 0 0 0 8 12z"
+        />
+      </svg>
+    </button>
+    <!-- Fine Bottone torna su -->
+  </body>
 </html>
